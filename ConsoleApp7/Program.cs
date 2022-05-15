@@ -428,38 +428,7 @@ namespace CarSite
                     case "5":
                         Environment.Exit(0);
                         break;
-                    case "6":
-                        FileStream filestream = new FileStream("out.txt", FileMode.Create);
-                        var streamwriter = new StreamWriter(filestream);
-                        streamwriter.AutoFlush = true;
-                        Console.SetOut(streamwriter);
-                        Console.SetError(streamwriter);
-                        Console.WriteLine("save edildi");
-
-                        break;
-
-                    case "7":
-                        Console.WriteLine("1-marka 2-model 3-rəng 4-qiymət 5- yanacaq 6-ban 7-il");
-                        switch (Console.ReadLine())
-                        {
-
-                            case "1":
-                                Console.WriteLine("markanı daxil et");
-                                var duplicates = car.Values
-                 .GroupBy(x => x.Id)
-                 .SelectMany(p =>
-                     p.Select((j, i) => new { j.Marka, j.Id, rn = i + 1 }))
-                 .Where(x => x.rn > 1).ToList();
-                                break;
-                            default:
-                                Console.WriteLine("Belə əməliyyat yoxdur");
-                                break;
-                        }
-
-                        break;
-                    default:
-                        Console.WriteLine("Belə əməliyyat yoxdur");
-                        break;
+                   
                         #endregion
                        
                 }
@@ -476,7 +445,7 @@ namespace CarSite
             Console.WriteLine("3.Elan silmək");
             Console.WriteLine("4.Redaktə et");
             Console.WriteLine("5.Çıxış");
-            Console.WriteLine("6.Save");
+           
             
         }
 
