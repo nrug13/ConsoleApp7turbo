@@ -72,7 +72,7 @@ namespace CarSite
 
         public override string ToString()
         {
-            return  Marka.ToString() + "\t" + Model.ToString() + "\t" + ModelId.ToString() + "\t" + Year.ToString() + "\t" +
+            return ModelId.ToString() + "\t"  + Marka.ToString() + "\t" + Model.ToString() +  "\t" + Year.ToString() + "\t" +
                 Price.ToString() + "\t" + ban.ToString() + "\t" + color.ToString() + "\t"+ yanacaq.ToString();
         }
     }
