@@ -27,10 +27,10 @@ namespace CarSite
             Thread.CurrentThread.CurrentUICulture = ci;
             #endregion
             #region qeydiyyat və giriş
-            Console.WriteLine("İstidafə üçün qeydiyyatdan keçin");
+            Console.WriteLine("İstifadə üçün qeydiyyatdan keçin");
             Console.WriteLine("----------------------------");
         l9:
-            Console.WriteLine("İstiadəçi adı");
+            Console.WriteLine("İstifadəçi adı");
             string ad = Console.ReadLine();
             if (String.IsNullOrEmpty(ad) == true)
             {
@@ -49,7 +49,7 @@ namespace CarSite
             }
             Console.Clear();
 
-
+             l77:
             Console.WriteLine("Giriş edin:");
             Console.WriteLine("Ad");
             string adg = Console.ReadLine();
@@ -59,6 +59,10 @@ namespace CarSite
             {
                 Console.WriteLine("Xəta");
                 goto l10;
+            }
+             else if (string.IsNullOrWhiteSpace(parolg)==true)
+            {
+                goto l77;
             }
             else
             {
