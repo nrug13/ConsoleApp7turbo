@@ -76,7 +76,7 @@ namespace CarSite
 
             IDictionary<int, Car> car = new Dictionary<int, Car>();
 
-            while (true)
+            while (true)                                          
             {
             l00:
                 Menu();
@@ -232,15 +232,20 @@ namespace CarSite
                     #endregion
                     #region redakte
                     case "4":
-
+                        l44:
                         Console.WriteLine("Redaktə etmək istədiyiniz elanın İD-si, düzəltməmək" +
                             "üçün boş buraxın");
 
 
 
-
+                        
                         int idtoedit = Convert.ToInt32(Console.ReadLine());
-
+                        string itdo = idtoedit.ToString();
+                        if (string.IsNullOrEmpty(itdo)==true)
+                        {
+                            goto l44;
+                        }
+                        
                         if (!car.ContainsKey(idtoedit))
                         {
                             Console.WriteLine("Bu nömrəli elan mövcud deyil");
@@ -377,14 +382,18 @@ namespace CarSite
 
                                 else
                                 {
-                                    color = car[idtoedit].color;
+                                   
                                     if (color != "1" && color != "2" && color != "3" && color != "4")
 
                                     {
                                         goto l4;
                                     }
+                                    else
+                                    {
+                                        color = car[idtoedit].color;
+                                    }
                                 }
-                                bool b11 = color.GetType() == typeof(int);
+                                
 
 
                             }
