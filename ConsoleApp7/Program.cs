@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace CarSite
 {
-    
+
     static class Program
 
     {
@@ -49,7 +49,7 @@ namespace CarSite
             }
             Console.Clear();
 
-             l77:
+        l77:
             Console.WriteLine("Giriş edin:");
             Console.WriteLine("Ad");
             string adg = Console.ReadLine();
@@ -60,7 +60,7 @@ namespace CarSite
                 Console.WriteLine("Xəta");
                 goto l10;
             }
-             else if (string.IsNullOrWhiteSpace(parolg)==true)
+            else if (string.IsNullOrWhiteSpace(parolg) == true)
             {
                 goto l77;
             }
@@ -238,8 +238,7 @@ namespace CarSite
 
 
 
-                        try
-                        {
+                       
                             int idtoedit = Convert.ToInt32(Console.ReadLine());
 
                             if (!car.ContainsKey(idtoedit))
@@ -421,20 +420,15 @@ namespace CarSite
                                 break;
                                 #endregion
                             }
-                        }
-                        catch (Exception)
-                        {
-                            Console.WriteLine("Mövcud deyil");
-                            goto l00;
-                            throw;
-                        }
+                        
+                        
                     #region cixis & save
                     case "5":
                         Environment.Exit(0);
                         break;
-                   
+
                         #endregion
-                       
+
                 }
                 Console.WriteLine();
             }
@@ -449,8 +443,8 @@ namespace CarSite
             Console.WriteLine("3.Elan silmək");
             Console.WriteLine("4.Redaktə et");
             Console.WriteLine("5.Çıxış");
-           
-            
+
+
         }
 
 
