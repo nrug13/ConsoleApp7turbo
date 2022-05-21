@@ -413,16 +413,24 @@ namespace CarSite
 
                             try
                             {
-                                yanacaq = car[idtoedit].yanacaq;
-                                
-
-                                if (yanacaq != "1" && yanacaq != "2")
-                                {
-                                    goto l6;
-                                }
-                                else
+                                if (string.IsNullOrEmpty(color) == true)
                                 {
                                     yanacaq = car[idtoedit].yanacaq;
+                                    Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
+                                }
+
+                                else
+                                {
+
+                                    if (yanacaq != "1" && yanacaq != "2")
+
+                                    {
+                                        goto l4;
+                                    }
+                                    else
+                                    {
+                                        yanacaq = car[idtoedit].yanacaq;
+                                    }
                                 }
                             }
                             catch (Exception)
