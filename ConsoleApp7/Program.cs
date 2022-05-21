@@ -354,7 +354,7 @@ namespace CarSite
                                     }
                                     else
                                     {
-
+                                        ban = car[idtoedit].ban;
                                     }
                                 }
                                 bool b9 = ban.GetType() == typeof(int);
@@ -419,6 +419,10 @@ namespace CarSite
                                 if (yanacaq != "1" && yanacaq != "2")
                                 {
                                     goto l6;
+                                }
+                                else
+                                {
+                                    yanacaq = car[idtoedit].yanacaq;
                                 }
                             }
                             catch (Exception)
