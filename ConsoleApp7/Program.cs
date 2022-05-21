@@ -414,7 +414,7 @@ namespace CarSite
                             try
                             {
                                 yanacaq = car[idtoedit].yanacaq;
-                                bool b5 = yanacaq.GetType() == typeof(int);
+                                
 
                                 if (yanacaq != "1" && yanacaq != "2")
                                 {
