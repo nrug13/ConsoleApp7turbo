@@ -238,191 +238,191 @@ namespace CarSite
 
 
 
-                       
-                            int idtoedit = Convert.ToInt32(Console.ReadLine());
 
-                            if (!car.ContainsKey(idtoedit))
+                        int idtoedit = Convert.ToInt32(Console.ReadLine());
+
+                        if (!car.ContainsKey(idtoedit))
+                        {
+                            Console.WriteLine("Bu nömrəli elan mövcud deyil");
+                            goto l00;
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Marka");
+                            string y = Console.ReadLine().ToUpper();
+
+                            if (string.IsNullOrEmpty(y) == true)
                             {
-                                Console.WriteLine("Bu nömrəli elan mövcud deyil");
-                                goto l00;
+                                marka = car[idtoedit].Marka;
+                                Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
                             }
-
                             else
                             {
-                                Console.WriteLine("Marka");
-                                string y = Console.ReadLine().ToUpper();
+                                marka = car[idtoedit].Marka = y;
+                            }
 
-                                if (string.IsNullOrEmpty(y) == true)
+                            Console.WriteLine("Model");
+                            string z = Console.ReadLine().ToUpper();
+
+                            if (string.IsNullOrEmpty(z) == true)
+                            {
+                                model = car[idtoedit].Model;
+                                Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
+                            }
+                            else
+                            {
+                                model = car[idtoedit].Model = z;
+                            }
+
+                            Console.WriteLine("İl");
+
+                            try
+                            {
+                                string v = Console.ReadLine();
+                                if (string.IsNullOrEmpty(v) == true)
                                 {
-                                    marka = car[idtoedit].Marka;
+                                    year = car[idtoedit].Year;
                                     Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
                                 }
                                 else
                                 {
-                                    marka = car[idtoedit].Marka = y;
+                                    year = car[idtoedit].Year = Convert.ToInt32(v);
                                 }
+                                bool b4 = year.GetType() == typeof(int);
 
-                                Console.WriteLine("Model");
-                                string z = Console.ReadLine().ToUpper();
 
-                                if (string.IsNullOrEmpty(z) == true)
+                            }
+                            catch (Exception)
+                            {
+                                goto l8;
+                                throw;
+                            }
+
+                            Console.WriteLine("Qiymət");
+
+
+                            try
+                            {
+
+                                string u = Console.ReadLine();
+                                if (string.IsNullOrEmpty(u) == true)
                                 {
-                                    model = car[idtoedit].Model;
+                                    price = car[idtoedit].Price;
                                     Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
                                 }
                                 else
                                 {
-                                    model = car[idtoedit].Model = z;
+                                    price = car[idtoedit].Year = Convert.ToInt32(u);
                                 }
+                                bool b9 = price.GetType() == typeof(int);
 
-                                Console.WriteLine("İl");
+                            }
+                            catch (Exception)
+                            {
+                                goto l8;
+                                throw;
+                            }
 
-                                try
+
+                        l2:
+                            Console.WriteLine("Ban");
+                            Console.WriteLine("1- Hibrid   2-Sedan");
+                            ban = Console.ReadLine();
+
+
+                            try
+                            {
+                                if (string.IsNullOrEmpty(ban) == true)
                                 {
-                                    string v = Console.ReadLine();
-                                    if (string.IsNullOrEmpty(v) == true)
-                                    {
-                                        year = car[idtoedit].Year;
-                                        Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
-                                    }
-                                    else
-                                    {
-                                        year = car[idtoedit].Year = Convert.ToInt32(v);
-                                    }
-                                    bool b4 = year.GetType() == typeof(int);
-
-
+                                    ban = car[idtoedit].ban;
+                                    Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
                                 }
-                                catch (Exception)
-                                {
-                                    goto l8;
-                                    throw;
-                                }
-
-                                Console.WriteLine("Qiymət");
-
-
-                                try
+                                else
                                 {
 
-                                    string u = Console.ReadLine();
-                                    if (string.IsNullOrEmpty(u) == true)
+                                    ban = car[idtoedit].ban;
+                                    if (ban != "1" && ban != "2" && ban != "3" && string.IsNullOrEmpty(ban) == true)
+
                                     {
-                                        price = car[idtoedit].Price;
-                                        Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
-                                    }
-                                    else
-                                    {
-                                        price = car[idtoedit].Year = Convert.ToInt32(u);
-                                    }
-                                    bool b9 = price.GetType() == typeof(int);
-
-                                }
-                                catch (Exception)
-                                {
-                                    goto l8;
-                                    throw;
-                                }
-
-
-                            l2:
-                                Console.WriteLine("Ban");
-                                Console.WriteLine("1- Hibrid   2-Sedan");
-                                ban = Console.ReadLine();
-
-
-                                try
-                                {
-                                    if (string.IsNullOrEmpty(ban) == true)
-                                    {
-                                        ban = car[idtoedit].ban;
-                                        Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
+                                        goto l2;
                                     }
                                     else
                                     {
 
-                                        ban = car[idtoedit].ban;
-                                        if (ban != "1" && ban != "2" && ban != "3" && string.IsNullOrEmpty(ban) == true)
-
-                                        {
-                                            goto l2;
-                                        }
-                                        else
-                                        {
-
-                                        }
                                     }
-                                    bool b9 = ban.GetType() == typeof(int);
-
-
                                 }
-                                catch (Exception)
+                                bool b9 = ban.GetType() == typeof(int);
+
+
+                            }
+                            catch (Exception)
+                            {
+                                goto l2;
+                                throw;
+                            }
+
+                        l4:
+                            Console.WriteLine("Rəng");
+                            Console.WriteLine("1-Ağ  2-Qara 3-Qırmızı 4-Göy");
+                            color = Console.ReadLine();
+                            try
+                            {
+
+                                if (string.IsNullOrEmpty(color) == true)
                                 {
-                                    goto l2;
-                                    throw;
+                                    color = car[idtoedit].color;
+                                    Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
                                 }
 
-                            l4:
-                                Console.WriteLine("Rəng");
-                                Console.WriteLine("1-Ağ  2-Qara 3-Qırmızı 4-Göy");
-                                color = Console.ReadLine();
-                                try
+                                else
                                 {
+                                    color = car[idtoedit].color;
+                                    if (color != "1" && color != "2" && color != "3" && color != "4")
 
-                                    if (string.IsNullOrEmpty(color) == true)
                                     {
-                                        color = car[idtoedit].color;
-                                        Console.WriteLine("Bu hissə əvvəlki kimi qaldı");
-                                    }
-
-                                    else
-                                    {
-                                        color = car[idtoedit].color;
-                                        if (color != "1" && color != "2" && color != "3" && color != "4")
-
-                                        {
-                                            goto l2;
-                                        }
-                                    }
-                                    bool b11 = color.GetType() == typeof(int);
-
-
-                                }
-                                catch (Exception)
-                                {
-                                    goto l4;
-                                    throw;
-
-                                }
-
-
-                            l6:
-                                Console.WriteLine("Yanacaq");
-                                Console.WriteLine("1-Dizel 2-Benzin");
-                                yanacaq = Console.ReadLine();
-
-
-                                try
-                                {
-                                    yanacaq = car[idtoedit].yanacaq;
-                                    bool b5 = yanacaq.GetType() == typeof(int);
-
-                                    if (yanacaq != "1" && yanacaq != "2")
-                                    {
-                                        goto l6;
+                                        goto l4;
                                     }
                                 }
-                                catch (Exception)
+                                bool b11 = color.GetType() == typeof(int);
+
+
+                            }
+                            catch (Exception)
+                            {
+                                goto l4;
+                                throw;
+
+                            }
+
+
+                        l6:
+                            Console.WriteLine("Yanacaq");
+                            Console.WriteLine("1-Dizel 2-Benzin");
+                            yanacaq = Console.ReadLine();
+
+
+                            try
+                            {
+                                yanacaq = car[idtoedit].yanacaq;
+                                bool b5 = yanacaq.GetType() == typeof(int);
+
+                                if (yanacaq != "1" && yanacaq != "2")
                                 {
                                     goto l6;
-                                    throw;
                                 }
-                                break;
-                                #endregion
                             }
-                        
-                        
-                    #region cixis
+                            catch (Exception)
+                            {
+                                goto l6;
+                                throw;
+                            }
+                            break;
+                            #endregion
+                        }
+
+
+                    #region cixis & save
                     case "5":
                         Environment.Exit(0);
                         break;
